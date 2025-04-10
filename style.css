@@ -1,0 +1,90 @@
+:root {
+    --bg: #f2f2f2;
+    --cell-bg: #fff;
+    --text: #000;
+    --cell-hover: #e6e6e6;
+  }
+  
+  body.dark {
+    --bg: #121212;
+    --cell-bg: #1e1e1e;
+    --text: #ffffff;
+    --cell-hover: #333;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .controls {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  select, button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+  }
+  
+  .cell {
+    background: var(--cell-bg);
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .cell:hover {
+    background: var(--cell-hover);
+  }
+  
+  .status, .scores {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .scores {
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 500px) {
+    .board {
+      grid-template-columns: repeat(3, 70px);
+      grid-template-rows: repeat(3, 70px);
+    }
+  
+    .cell {
+      font-size: 2rem;
+    }
+  }
+  
